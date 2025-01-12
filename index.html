@@ -182,9 +182,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             showSection('about-me');
         });
-    </script>
-    <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwueYtwElOftbophr8S2V0j5m-DRuxg5LocQcXqb2YJUjxgqzb_PdGwyvlRTRo4BL4tXA/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwueYtwElOftbophr8S2V0j5m-DRuxg5LocQcXqb2YJUjxgqzb_PdGwyvlRTRo4BL4tXA/exec'
   const form = document.forms['submit-to-google-sheet']
 
   form.addEventListener('submit', e => {
@@ -193,6 +191,7 @@
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
-</script>
+    </script>
+    
 </body>
 </html>
