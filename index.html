@@ -116,6 +116,9 @@
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send</button>
         </form>
+        <span id="msg">
+
+    </span>
 
         <!-- Contact Info (Initially Hidden) -->
        <!-- Contact Info (Initially Hidden) -->
@@ -157,6 +160,7 @@
             // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.style.display = 'none');
+            const  msg=getElementById("msg")
             
             // Show the selected section
             const section = document.getElementById(sectionId);
