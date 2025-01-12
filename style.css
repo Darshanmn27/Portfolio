@@ -1,4 +1,9 @@
-
+  #msg
+    {
+        color:#61b752;
+        margin-top: -20px;
+        display: block;
+    }
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
