@@ -1,22 +1,36 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Profile Picture Styling */
 .profile-pic {
-    width: 200px; /* Adjust size as per preference */
-    height: 200px; /* Ensure the height is equal to the width for a perfect circle */
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 4px solid #5193c6;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
     scroll-behavior: smooth;
     background-image: url("bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container {
@@ -26,25 +40,28 @@ body {
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.9);
     color: #fff;
     text-align: center;
     padding: 50px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
     font-size: 3rem;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 header h2 {
     font-size: 1.5rem;
     font-weight: normal;
+    animation: fadeIn 2s ease;
 }
 
 /* Navigation */
 nav {
-    background-color: #444;
+    background-color: rgba(68, 68, 68, 0.9);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -78,81 +95,69 @@ nav a:hover {
 section {
     padding: 40px 20px;
     margin: 20px 0;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    display: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 h2.section-title {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: center;
+    color: #5193c6;
 }
 
 /* About Me Section Layout */
 #about-me {
-    padding: 40px 20px;
-    background-color: #fff;
-    color: #333;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row; /* Change to row for horizontal layout */
+    flex-direction: row;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .about-me-content {
     display: flex;
     align-items: center;
-    gap: 20px; /* Space between the image and text */
+    gap: 20px;
 }
 
 .about-me-text {
-    text-align: left; /* Align text to the left */
+    text-align: left;
 }
 
 .about-me-text p {
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 600px;
-    /* No need to center text anymore */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-ul li b {
-    font-weight: bold;
-}
-
-a {
-    color: #333;
-}
-
-a:hover {
-    color: #f4a261;
 }
 
 /* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 15px;
 }
 
 .contact-form input, .contact-form textarea {
-    margin-bottom: 10px;
     padding: 15px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #5193c6;
+    outline: none;
 }
 
 .contact-form button {
@@ -162,6 +167,7 @@ a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -175,42 +181,86 @@ a:hover {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    gap: 20px;
 }
 
 .contact-info a {
-    margin: 0 15px;
     font-size: 1.5rem;
     color: #333;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-info a:hover {
     color: #f4a261;
+    transform: scale(1.1);
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.9);
     color: #fff;
     text-align: center;
     padding: 20px;
+    font-size: 0.9rem;
 }
 
-/* Responsive Design for Small Screens */
-@media (max-width: 768px) {
-    .about-me-content {
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #about-me {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+    }
+
+    .about-me-text {
+        text-align: center;
     }
 
     .profile-pic {
-        width: 150px; /* Smaller profile image on mobile */
+        width: 150px;
         height: 150px;
     }
+}
 
-    .about-me-text p {
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        background-color: rgba(68, 68, 68, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
         font-size: 1rem;
-        text-align: center; /* Center text on small screens */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
     }
 }
