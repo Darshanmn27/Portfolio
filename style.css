@@ -185,18 +185,76 @@ footer {
 }
 
 /* Responsive Design */
+/* Responsive Design for Small Screens */
 @media (max-width: 768px) {
     #about-me {
         flex-direction: column;
-        text-align: center;
+        text-align: center; /* Center text on mobile */
     }
 
     .profile-pic {
-        width: 100px;
-        height: 100px;
+        width: 150px; /* Smaller profile image on mobile */
+        height: 150px;
     }
 
     .about-me-text p {
         font-size: 1rem;
+        line-height: 1.5; /* Improved line height for readability */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+    }
+
+    nav li {
+        margin: 10px 0; /* Space between menu items */
+    }
+
+    /* Make all sections full-width */
+    .section {
+        padding: 20px; /* Reduced padding */
+        margin: 10px 0; /* Reduced margin */
+    }
+}
+
+/* Responsive Design for Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #about-me {
+        flex-direction: row;
+        text-align: left; /* Align text to left for tablets */
+    }
+
+    .profile-pic {
+        width: 175px; /* Slightly larger for tablets */
+        height: 175px;
+    }
+
+    .about-me-text p {
+        font-size: 1.1rem; /* Increase font size */
+    }
+
+    nav ul {
+        flex-direction: row; /* Align menu items horizontally */
+    }
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 1025px) {
+    #about-me {
+        flex-direction: row; /* Keep horizontal layout on larger screens */
+        justify-content: space-between; /* Space between image and text */
+    }
+
+    .profile-pic {
+        width: 200px; /* Default profile image size */
+        height: 200px;
+    }
+
+    .about-me-text p {
+        font-size: 1.2rem; /* Default font size */
+    }
+
+    .section {
+        padding: 40px 20px; /* Default padding for larger screens */
     }
 }
