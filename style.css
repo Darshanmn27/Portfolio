@@ -258,3 +258,89 @@ footer {
         padding: 40px 20px; /* Default padding for larger screens */
     }
 }
+section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .skill-section {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 150px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .skill-section:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #f0f0f0;
+        }
+
+        .skill-section img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            animation: bounceIn 1s;
+        }
+
+        .skill-section h3 {
+            color: #4A4A4A;
+            font-size: 20px;
+            margin-top: 10px;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
